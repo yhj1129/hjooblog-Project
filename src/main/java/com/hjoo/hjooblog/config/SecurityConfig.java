@@ -25,15 +25,17 @@ public class SecurityConfig {
         // 2. frame option 해제
         http.headers().frameOptions().disable();
 
-        //2. Form 로그인 설정
+        //3. Form 로그인 설정
         http.formLogin()
                 .loginPage("/loginForm")
-                .loginProcessingUrl("/login")
+                .loginProcessingUrl("/login") // 이 url 타면 MyUserDetailsService 호출되고 Post, x-www로 요청
                 .successHandler((request, response, authentication) -> {
                     log.debug("디버그 : 로그인 성공");
+                    response.sendRedirect("/");
                 })
                 .failureHandler((request, response, exception) -> {
                     log.debug("디버그 : 로그인 실패  : " + exception.getMessage());
+                    response.sendRedirect("/loginForm");
                 });
 
         // 3. 인증, 권한 필터 설정
