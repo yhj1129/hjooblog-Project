@@ -21,4 +21,4 @@ spring:
     open-in-view: false
 logging:
   level:
-    '[shop.mtcoding.hjooblog]': INFO
+    '[com.hjoo.hjooblog]': INFO

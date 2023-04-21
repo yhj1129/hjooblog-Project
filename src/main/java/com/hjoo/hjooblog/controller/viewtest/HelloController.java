@@ -1,4 +1,4 @@
-package com.hjoo.hjooblog.controller;
+package com.hjoo.hjooblog.controller.viewtest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

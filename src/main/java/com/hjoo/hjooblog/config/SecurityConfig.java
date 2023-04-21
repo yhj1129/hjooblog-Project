@@ -22,6 +22,9 @@ public class SecurityConfig {
         // 1. CSRF 해제 (추후에 필요하면 제거)
         http.csrf().disable();
 
+        // 2. frame option 해제
+        http.headers().frameOptions().disable();
+
         //2. Form 로그인 설정
         http.formLogin()
                 .loginPage("/loginForm")
