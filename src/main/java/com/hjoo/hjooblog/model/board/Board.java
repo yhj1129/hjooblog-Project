@@ -1,5 +1,6 @@
 package com.hjoo.hjooblog.model.board;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.hjoo.hjooblog.model.user.User;
 import lombok.*;
 
@@ -23,7 +24,9 @@ public class Board {
     private String content;
     @Lob
     private String thumbnail; //content에 등록된 사징 중 하나를 선정해서 자동으로 만들기
+    @JsonIgnore
     private LocalDateTime createdAt;
+    @JsonIgnore
     private LocalDateTime updatedAt;
     @PrePersist
     protected void onCreate() {

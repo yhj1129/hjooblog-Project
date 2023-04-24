@@ -1,5 +1,6 @@
 package com.hjoo.hjooblog.model.user;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -24,7 +25,10 @@ public class User {
     private String role; // USER(고객)
     private String profile; // 유저 프로필 사진의 경로 저장
     private Boolean status;
+    @JsonIgnore
     private LocalDateTime createdAt;
+
+    @JsonIgnore
     private LocalDateTime updatedAt;
 
     // 프로필 사진 변경
